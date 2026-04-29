@@ -1,0 +1,1578 @@
+        <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>ECO LIFE - Сохраним планету вместе</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        </head>
+        <body>
+
+            <style>
+                /* Variables */
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #4caf50;
+            --accent-color: #0288d1;
+            --bg-color: #ffffff;
+            --bg-light: #f4f9f4;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-accent {
+            color: var(--primary-light);
+        }
+
+        .nav a {
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .nav a:hover {
+            color: var(--primary-light);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 5px;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .lang-switcher button.active, .lang-switcher button:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            margin: 20px 0 10px;
+            color: var(--primary-color);
+        }
+
+        .about-image img {
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .card-green h3 {
+            color: var(--primary-color);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Statistics */
+        .stats {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Form */
+        .join-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .join-form input, .join-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .join-form input:focus, .join-form textarea:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Video Wrapper */
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-grid h4 {
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #888;
+        }
+        /* ===== FOOTER BANNER BEAUTY STYLE ===== */
+.footer-banner {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #e8f5e9, #ffffff);
+}
+
+.footer-banner-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.footer-banner-container:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.banner-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.banner-image:hover img {
+    transform: scale(1.08);
+}
+
+/* TEXT */
+.banner-text {
+    flex: 1;
+}
+
+.banner-text h2 {
+    font-size: 2.2rem;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.banner-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {фввЫыыЫ
+    .footer-banner-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 220px;
+    }
+} 
+
+
+
+        /* BURGER */
+        .burger {
+            display: none;
+        }
+
+        /* Адаптивное видео */
+        .video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+        /* Планшеты */
+        @media (max-width: 992px) {
+            .header-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Телефоны */
+        @media (max-width: 768px) {
+
+            .burger {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+
+            .header-container {
+                position: relative;
+                align-items: flex-start;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: white;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav.active {
+                display: flex;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
+                height: auto;
+                padding: 100px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Маленькие телефоны */
+        @media (max-width: 480px) {
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Мобильные языки */
+        .mobile-lang {
+            display: none;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .mobile-lang button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Показываем только на телефоне */
+        @media (max-width: 768px) {
+
+            .mobile-lang {
+                display: block;
+            }
+
+            /* Скрываем языки сверху */
+            .header-actions .lang-switcher {
+                display: none;
+            }
+        }   
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* үлкен блок */
+.card-large {
+    grid-column: span 2;
+}
+
+.project-card {
+    position: relative; /* МАҢЫЗДЫ */
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #2e7d32;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+.skill-card img {
+    width: 60px;
+    margin: 0 auto 10px;
+}
+
+.skill-card p {
+    font-weight: 600;
+}
+
+/* Case Study Section */
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.case-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover эффект */
+.case-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Суреттің контейнері */
+.case-card-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.case-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+/* Суреттің zoom эффектісі */
+.case-card:hover .case-card-image img {
+    transform: scale(1.1);
+}
+
+/* Карточка ішінде мәтін */
+.case-card-body {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card-body h3 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.case-card-body p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Tags/Badges */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+.tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+    transition: var(--transition);
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Батырма стильдемесі */
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Адаптивтік */
+@media (max-width: 768px) {
+    .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-card-body {
+        padding: 20px;
+    }
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 22px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #333;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #4caf50;
+    transform: scale(1.1);
+}
+/* ===== MODAL STYLE ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* фотоны project-card сияқты қыламыз */
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ең маңыздысы */
+    transition: 0.3s;
+}
+
+/* hover эффект (жоба карточка сияқты) */
+.banner-image:hover img {
+    transform: scale(1.08);
+}
+#eco-game td {
+    width: 140px;
+    height: 80px;
+    border: 2px solid #2e7d32;
+    text-align: center;
+    cursor: grab;
+    background: white;
+    transition: 0.3s;
+}
+
+#eco-game .dragging {
+    opacity: 0.5;
+    background: #a5d6a7;
+}
+
+#eco-game .hovered {
+    border: 3px dashed orange;
+}
+
+#eco-game .correct {
+    background: #c8e6c9;
+}
+
+#eco-game .wrong {
+    background: #ffcdd2;
+}
+
+.fullscreen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.fullscreen-btn:hover {
+    background: #4caf50;
+    transform: scale(1.05);
+}
+
+:fullscreen {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* fullscreen ішіндегі video әдемі көрінуі үшін */
+:fullscreen video {
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+}
+
+            </style>
+
+            <header class="header">
+                <!-- Сайттың жоғарғы бөлігі: логотип, меню, тіл ауыстыру және тіркелу батырмасы -->
+                <div class="container header-container">
+                    <a href="#" class="logo">ECO <span class="logo-accent">LIFE</span></a>
+                    <div class="burger" onclick="toggleMenu()">☰</div>
+                    <nav class="nav">
+                        <!-- Навигация: сайт бөлімдеріне өту сілтемелері -->
+                        <a href="#about" data-i18n="nav-about">О нас</a>
+                        <a href="#problems" data-i18n="nav-problems">Проблемы</a>
+                        <a href="#solutions" data-i18n="nav-solutions">Решения</a>
+                        <a href="#projects" data-i18n="nav-projects">Проекты</a>
+                        <a href="#contacts" data-i18n="nav-contacts">Контакты</a>
+                        <div class="mobile-lang">
+                        <!-- Мобильді версия үшін тіл ауыстыру -->
+            <button onclick="changeLanguage('ru')">RU</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('kz')">KZ</button>
+        </div>
+                    </nav>
+                    <div class="header-actions">
+                        <!-- Десктоп үшін тіл ауыстыру -->
+                        <div class="lang-switcher">
+                            <button onclick="changeLanguage('ru')" class="active">RU</button>
+                            <button onclick="changeLanguage('en')">EN</button>
+                            <button onclick="changeLanguage('kz')">KZ</button>
+                        </div>
+                        <!-- Қосылу батырмасы -->   
+                        <a href="#join" class="btn btn-primary" data-i18n="nav-join">Присоединиться</a>
+                    </div>
+                </div>
+            </header>
+
+<button onclick="toggleFullScreen()" id="fullscreenBtn" class="fullscreen-btn">
+    Full Screen
+</button>
+            
+            <section class="hero" id="home">
+                <!-- Басты экран (баннер): негізгі тақырып, қысқаша мәтін және батырма -->
+                <div class="hero-content">
+                    <h1 data-i18n="hero-title">Сохраним планету вместе</h1>
+                    <p data-i18n="hero-subtitle">Наше будущее начинается с действий сегодня. Присоединяйтесь к глобальному движению за чистую Землю.</p>
+                    <a href="#about" class="btn btn-primary" data-i18n="hero-btn">Начать</a>
+                </div>
+            </section>
+
+            <section class="section about" id="about">
+                <!-- Біз туралы: ұйымның сипаттамасы, миссиясы және сурет -->
+                <div class="container">
+                    <h2 class="section-title" data-i18n="about-title">О нашем движении</h2>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p data-i18n="about-desc">Мы — международная экологическая организация, объединяющая неравнодушных людей по всему миру. Наша цель — защитить природу, восстановить экосистемы и обучить общество устойчивому образу жизни.</p>
+                            <h3 data-i18n="about-mission">Наша миссия</h3>
+                            <p data-i18n="about-mission-desc">Создать мир, в котором человек и природа существуют в гармонии. Мы верим, что даже маленькие шаги каждого из нас способны привести к глобальным изменениям.</p>
+                        </div>
+                        <div class="about-image">
+                            <!-- Табиғат суреті -->
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" alt="Природа">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section problems bg-light" id="problems">
+                <!-- Экологиялық проблемалар: карточкалар түрінде -->  
+                <div class="container">
+                    <h2 class="section-title" data-i18n="prob-title">Экологические проблемы</h2>
+                    <div class="cards-grid">
+                        <!-- Әр карточка — бір проблема -->
+                    <div class="cards-grid">
+                    <div class="card card-large">
+                            <h3>Загрязнение воздуха</h3>
+                            <p>Выбросы заводов и автомобилей разрушают озоновый слой и вызывают респираторные заболевания по всему миру.</p>
+                    </div>
+                        <div class="card">
+                            <h3 data-i18n="prob-water">Загрязнение воды</h3>
+                            <p data-i18n="prob-water-desc">Тонны токсичных отходов ежегодно сбрасываются в океаны, убивая морскую фауну и отравляя источники питьевой воды.</p>
+                        </div>
+                        <div class="card">
+                            <h3 data-i18n="prob-forest">Вырубка лесов</h3>
+                            <p data-i18n="prob-forest-desc">Ежеминутно уничтожаются площади лесов, равные десяткам футбольных полей, что лишает животных дома и усиливает парниковый эффект.</p>
+                        </div>
+                        <div class="card">
+                            <h3 data-i18n="prob-plastic">Пластик</h3>
+                            <p data-i18n="prob-plastic-desc">Микропластик проникает в пищевые цепочки. Пластиковые острова в океанах уже достигают размеров целых стран.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section solutions" id="solutions">
+                <!-- Шешімдер: экологиялық мәселелерді шешу жолдары -->
+                <div class="container">
+                    <h2 class="section-title" data-i18n="sol-title">Наши решения</h2>
+                    <div class="cards-grid">
+                        <div class="card card-green">
+                            <h3 data-i18n="sol-recycle">Переработка отходов</h3>
+                            <p data-i18n="sol-recycle-desc">Внедрение систем раздельного сбора мусора и создания новых материалов из вторсырья.</p>
+                        </div>
+                        <div class="card card-green">
+                            <h3 data-i18n="sol-plastic">Снижение пластика</h3>
+                            <p data-i18n="sol-plastic-desc">Отказ от одноразовых упаковок в пользу биоразлагаемых и многоразовых альтернатив.</p>
+                        </div>
+                        <div class="card card-green">
+                            <h3 data-i18n="sol-energy">Возобновляемая энергия</h3>
+                            <p data-i18n="sol-energy-desc">Переход на солнечную, ветровую и геотермальную энергию для снижения углеродного следа.</p>
+                        </div>
+                        <div class="card card-green">
+                            <h3 data-i18n="sol-green">Озеленение</h3>
+                            <p data-i18n="sol-green-desc">Массовая высадка деревьев и создание городских парков для очистки воздуха.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main>
+                <!-- Негізгі контент аймағы (қосымша бөлімдер үшін бос орын) -->    
+        <section>
+            <!-- Болашақта қосылатын бөлім -->
+        </section>
+        <section>
+            <!-- Тағы бір қосымша бөлім -->
+        </section>
+            </main>
+            <section class="section bg-light" id="eco-game">
+    <div class="container">
+        <h2 class="section-title">🌍 Экологиялық ойын</h2>
+        <p style="text-align:center;">Әрекеттерді дұрыс категорияға орналастыр</p>
+
+        <div id="score" style="text-align:center; font-size:20px;">Ұпай: 0</div>
+
+        <table style="margin:20px auto;">
+            <tr>
+                <td draggable="true">Пайдалы</td>
+                <td draggable="true">Зиянды</td>
+                <td draggable="true">Бейтарап</td>
+            </tr>
+            <tr>
+                <td draggable="true">Қайта өңдеу</td>
+                <td draggable="true">Пластик жағу</td>
+                <td draggable="true">Жүру</td>
+            </tr>
+            <tr>
+                <td draggable="true">Ағаш отырғызу</td>
+                <td draggable="true">Қоқыс тастау</td>
+                <td draggable="true">Теледидар көру</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+            <section class="section projects bg-light" id="projects">
+                <!-- Жобалар: нақты жасалған экологиялық жобалар -->
+                <div class="container">
+                    <h2 class="section-title" data-i18n="proj-title">Наши проекты</h2>
+                    <div class="projects-grid"> 
+                        <div class="project-card">
+                            <div class="badge">Экологияга комек</div>   
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80" alt="Проект 1">
+                            <div class="project-info">
+                                <h3 data-i18n="proj-1">Очистка побережий</h3>
+                                <p data-i18n="proj-1-desc">Волонтёрская программа по сбору пластика на пляжах и берегах рек.</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="badge">Экологияга комек</div>
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Проект 2">
+                            <div class="project-info">
+                                <h3 data-i18n="proj-2">Леса будущего</h3>
+                                <p data-i18n="proj-2-desc">Инициатива по восстановлению вырубленных лесных массивов.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section stats">
+                <!-- Статистика: ұйым жетістіктері --> 
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>5M+</h3>
+                            <p data-i18n="stat-1">Посаженных деревьев</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>120K</h3>
+                            <p data-i18n="stat-2">Активных волонтёров</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>800+</h3>
+                            <p data-i18n="stat-3">Очищенных водоемов</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50</h3>
+                            <p data-i18n="stat-4">Стран участниц</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section video-section">
+                <div class="container text-center">
+                    <h2 class="section-title" data-i18n="video-title">Экология в фокусе</h2>
+                    <div class="video-wrapper">
+                       <div class="video-wrapper">
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Сіздің браузер видеоны қолдамайды.
+    </video>
+</div>
+                </div>
+            </section>
+
+            <section class="section join bg-light" id="join">
+                <div class="container">
+                    <h2 class="section-title" data-i18n="form-title">Присоединиться к нам</h2>
+                    <form class="join-form">
+                        <input type="text" id="name" placeholder="Ваше имя" data-i18n-ph="form-name" required>
+                        <input type="email" id="email" placeholder="Ваш Email" data-i18n-ph="form-email" required>
+                        <textarea id="message" rows="5" placeholder="Почему вы хотите стать волонтером?" data-i18n-ph="form-msg" required></textarea>
+                        <button type="submit" class="btn btn-primary" data-i18n="form-submit">Отправить заявку</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="section skills" id="skills">
+    <!-- Skills бөлімі: технологиялар -->
+    <div class="container">
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-grid">
+            
+            <!-- HTML -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <p>HTML5</p>
+            </div>
+
+            <!-- CSS -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                <p>CSS3</p>
+            </div>
+
+            <!-- JS -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+                <p>JavaScript</p>
+            </div>
+
+            <!-- Git -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <p>Git</p>
+            </div>
+
+            <!-- Figma -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                <p>Figma</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Projects Case Study / Gallery Section -->
+<section class="section case-study bg-light" id="case-study">
+    <div class="container">
+        <h2 class="section-title" data-i18n="case-title">Жоба әзірлеушілер</h2>
+        
+        <div class="case-study-grid">
+            <!-- Project Card 1 -->
+            <div class="case-card">
+                <div class="case-card-image">
+                    <img src="Nuirk.jpg" alt="ECO App">
+                </div>
+                <div class="case-card-body">
+                    <h3>Сембай Нуржан</h3>
+                    <p>Java Script әзірлеуші.</p>
+                    
+                    <div class="tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Back end</span>
+                    </div>
+                    
+                    <button onclick="openModal('nur')" class="btn btn-primary btn-sm">Толығырақ</button>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="case-card">
+                <div class="case-card-image">
+                    <img src="Oren.jpg" alt="Data Dashboard">
+                </div>
+                <div class="case-card-body">
+                    <h3>Сейсенәлі Өрен</h3>
+                    <p>Html кодтар әзірлеуші.</p>
+                    
+                    <div class="tags">
+                        <span class="tag">Html</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Chart.js</span>
+                    </div>
+                    
+                    <button onclick="openModal('oren')" class="btn btn-primary btn-sm">Толығырақ</button>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="case-card">
+                <div class="case-card-image">
+                    <img src="Beka.jpg" alt="AI Monitoring">
+                </div>
+                <div class="case-card-body">
+                    <h3>Мұхтарбек Бекжан</h3>
+                    <p>Css әзірлеуші.</p>
+                    
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Vs code</span>
+                        <span class="tag">ML</span>
+                    </div>
+                    
+                   <button onclick="openModal('beka')" class="btn btn-primary btn-sm">Толығырақ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer-banner">
+    <div class="footer-banner-container">
+
+        <!-- Сурет -->
+        <div class="banner-image">
+            <img src="визитка.jpeg" alt="Eco Life">
+        </div>
+
+        <!-- Текст -->
+        <div class="banner-text">
+            <h2>ECO LIFE</h2>
+            <p>
+                ECO LIFE — табиғатты қорғауға бағытталған экологиялық жоба. 
+                Біз қоршаған ортаны сақтау, ағаш отырғызу және тазалық акцияларын ұйымдастыру арқылы 
+                болашаққа үлес қосамыз.
+            </p>
+            <p>
+                Біздің мақсат — адамдарды экологияға бей-жай қарамауға шақыру және 
+                таза әрі қауіпсіз орта қалыптастыру.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+            <footer class="footer" id="contacts">
+                <!-- Төменгі бөлік: байланыс, соцсети және ақпарат -->
+                <div class="container footer-grid">
+                    <div>
+                        <!-- Логотип және қысқаша мәтін -->
+                        <a href="#" class="logo footer-logo">ECO <span class="logo-accent">LIFE</span></a>
+                        <p data-i18n="footer-desc" style="margin-top: 10px; color: #ccc;">Сделаем мир чище вместе.</p>
+                    </div>
+                    <div>
+                        <!-- Байланыс мәліметтері -->
+                        <h4 data-i18n="footer-contacts">Контакты</h4>
+                        <p>Email: hello@ecolife.org</p>
+                        <p>Тел: +7 (775) 656-94-37</p>
+                    </div>
+                    <div>
+    <h4 data-i18n="footer-social">Соцсети</h4>
+
+    <div class="social-icons">
+        <a href="https://instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://youtube.com" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+</div>
+                </div>
+                <!-- Авторлық құқық -->
+                <div class="container footer-bottom">
+                    <p>&copy; 2026 ECO LIFE. All rights reserved.</p>
+                </div>
+            </footer>
+            <!-- ===== MODALS (осы жерге қос) ===== -->
+
+<div id="modal-nur" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('nur')">&times;</span>
+        <h2>Сембай Нуржан</h2>
+        <p>JavaScript әзірлеуші. Frontend және backend логикасымен айналысады.
+            ECO LIFE ЖОБАСЫНЫҢ ҚАТЫСУШЫСЫ.
+            жобада үлкен жұмыс атқарған тұлға 
+            телеофн номері:8700 010 02 03
+        </p>
+    </div>
+</div>
+
+<div id="modal-oren" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('oren')">&times;</span>
+        <h2>Сейсенәлі Өрен</h2>
+        <p>HTML құрылымын жасайды және сайт құрылымын реттейді.
+            ECO LIFE ЖОБАСЫНЫҢ ҚАТЫСУШЫСЫ.
+            жоба дизаиның жобалушысы 
+            телефон номері:8700 020 02 03
+        </p>
+    </div>
+</div>
+
+<div id="modal-beka" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('beka')">&times;</span>
+        <h2>Мұхтарбек Бекжан</h2>
+        <p>CSS дизайнер. Сайттың стилін, түсін, анимацияларын жасайды.
+            ECO LIFE ЖОБАСЫНЫҢ ҚАТЫСУШЫСЫ.
+            жобалаушы жұмыстарын атқарушы 
+            телефон номері:8700 030 02 03
+        </p>
+    </div>
+</div>
+
+            <script>
+                // Словарь переводов
+        const translations = {
+            ru: {
+                "nav-about": "О нас",
+                "nav-problems": "Проблемы",
+                "nav-solutions": "Решения",
+                "nav-projects": "Проекты",
+                "nav-contacts": "Контакты",
+                "nav-join": "Присоединиться",
+                "hero-title": "Сохраним планету вместе",
+                "hero-subtitle": "Наше будущее начинается с действий сегодня. Присоединяйтесь к глобальному движению за чистую Землю.",
+                "hero-btn": "Начать",
+                "about-title": "О нашем движении",
+                "about-desc": "Мы — международная экологическая организация, объединяющая неравнодушных людей по всему миру. Наша цель — защитить природу, восстановить экосистемы и обучить общество устойчивому образу жизни.",
+                "about-mission": "Наша миссия",
+                "about-mission-desc": "Создать мир, в котором человек и природа существуют в гармонии. Мы верим, что даже маленькие шаги каждого из нас способны привести к глобальным изменениям.",
+                "prob-title": "Экологические проблемы",
+                "prob-air": "Загрязнение воздуха",
+                "prob-air-desc": "Выбросы заводов и автомобилей разрушают озоновый слой и вызывают респираторные заболевания по всему миру.",
+                "prob-water": "Загрязнение воды",
+                "prob-water-desc": "Тонны токсичных отходов ежегодно сбрасываются в океаны, убивая морскую фауну и отравляя источники питьевой воды.",
+                "prob-forest": "Вырубка лесов",
+                "prob-forest-desc": "Ежеминутно уничтожаются площади лесов, равные десяткам футбольных полей, что лишает животных дома и усиливает парниковый эффект.",
+                "prob-plastic": "Пластик",
+                "prob-plastic-desc": "Микропластик проникает в пищевые цепочки. Пластиковые острова в океанах уже достигают размеров целых стран.",
+                "sol-title": "Наши решения",
+                "sol-recycle": "Переработка отходов",
+                "sol-recycle-desc": "Внедрение систем раздельного сбора мусора и создания новых материалов из вторсырья.",
+                "sol-plastic": "Снижение пластика",
+                "sol-plastic-desc": "Отказ от одноразовых упаковок в пользу биоразлагаемых и многоразовых альтернатив.",
+                "sol-energy": "Возобновляемая энергия",
+                "sol-energy-desc": "Переход на солнечную, ветровую и геотермальную энергию для снижения углеродного следа.",
+                "sol-green": "Озеленение",
+                "sol-green-desc": "Массовая высадка деревьев и создание городских парков для очистки воздуха.",
+                "proj-title": "Наши проекты",
+                "proj-1": "Очистка побережий",
+                "proj-1-desc": "Волонтёрская программа по сбору пластика на пляжах и берегах рек.",
+                "proj-2": "Леса будущего",
+                "proj-2-desc": "Инициатива по восстановлению вырубленных лесных массивов.",
+                "stat-1": "Посаженных деревьев",
+                "stat-2": "Активных волонтёров",
+                "stat-3": "Очищенных водоемов",
+                "stat-4": "Стран участниц",
+                "video-title": "Экология в фокусе",
+                "case-title": "Разработчики проекта",
+                "form-title": "Присоединиться к нам",
+                "form-name": "Ваше имя",
+                "form-email": "Ваш Email",
+                "form-msg": "Почему вы хотите стать волонтером?",
+                "form-submit": "Отправить заявку",
+                "footer-desc": "Сделаем мир чище вместе.",
+                "footer-contacts": "Контакты",
+                "footer-social": "Соцсети"
+            },
+            en: {
+                "nav-about": "About Us",
+                "nav-problems": "Problems",
+                "nav-solutions": "Solutions",
+                "nav-projects": "Projects",
+                "nav-contacts": "Contacts",
+                "nav-join": "Join Us",
+                "hero-title": "Save the Planet Together",
+                "hero-subtitle": "Our future begins with action today. Join the global movement for a clean Earth.",
+                "hero-btn": "Get Started",
+                "about-title": "About Our Movement",
+                "about-desc": "We are an international environmental organization uniting caring people worldwide. Our goal is to protect nature, restore ecosystems, and educate society on sustainable living.",
+                "about-mission": "Our Mission",
+                "about-mission-desc": "To create a world where humans and nature exist in harmony. We believe even small steps by each of us can lead to global change.",
+                "prob-title": "Environmental Issues",
+                "prob-air": "Air Pollution",
+                "prob-air-desc": "Factory and car emissions destroy the ozone layer and cause respiratory diseases worldwide.",
+                "prob-water": "Water Pollution",
+                "prob-water-desc": "Tons of toxic waste are dumped into oceans annually, killing marine life and poisoning drinking water.",
+                "prob-forest": "Deforestation",
+                "prob-forest-desc": "Forest areas equal to dozens of football fields are destroyed every minute, depriving animals of homes.",
+                "prob-plastic": "Plastic Waste",
+                "prob-plastic-desc": "Microplastics enter food chains. Plastic islands in oceans are reaching the size of entire countries.",
+                "sol-title": "Our Solutions",
+                "sol-recycle": "Waste Recycling",
+                "sol-recycle-desc": "Implementing waste segregation systems and creating new materials from recyclables.",
+                "sol-plastic": "Reducing Plastic",
+                "sol-plastic-desc": "Abandoning single-use packaging in favor of biodegradable and reusable alternatives.",
+                "sol-energy": "Renewable Energy",
+                "sol-energy-desc": "Transitioning to solar, wind, and geothermal energy to reduce the carbon footprint.",
+                "sol-green": "Greening",
+                "sol-green-desc": "Mass tree planting and creating urban parks to purify the air.",
+                "proj-title": "Our Projects",
+                "proj-1": "Coastline Cleanup",
+                "proj-1-desc": "A volunteer program to collect plastic on beaches and riverbanks.",
+                "proj-2": "Forests of the Future",
+                "proj-2-desc": "An initiative to restore deforested areas.",
+                "stat-1": "Trees Planted",
+                "stat-2": "Active Volunteers",
+                "stat-3": "Water Bodies Cleaned",
+                "stat-4": "Participating Countries",
+                "video-title": "Ecology in Focus",
+                "case-title": "Project Developers",
+                "form-title": "Join Us",
+                "form-name": "Your Name",
+                "form-email": "Your Email",
+                "form-msg": "Why do you want to volunteer?",
+                "form-submit": "Submit Application",
+                "footer-desc": "Making the world cleaner together.",
+                "footer-contacts": "Contacts",
+                "footer-social": "Social Media"
+            },
+            kz: {
+                "nav-about": "Біз туралы",
+                "nav-problems": "Мәселелер",
+                "nav-solutions": "Шешімдер",
+                "nav-projects": "Жобалар",
+                "nav-contacts": "Байланыс",
+                "nav-join": "Қосылу",
+                "hero-title": "Ғаламшарды бірге сақтайық",
+                "hero-subtitle": "Біздің болашағымыз бүгінгі әрекеттен басталады. Таза Жер үшін жаһандық қозғалысқа қосылыңыз.",
+                "hero-btn": "Бастау",
+                "about-title": "Біздің қозғалыс туралы",
+                "about-desc": "Біз дүние жүзіндегі бей-жай қарамайтын адамдарды біріктіретін халықаралық экологиялық ұйымбыз. Біздің мақсат – табиғатты қорғау, экожүйелерді қалпына келтіру.",
+                "about-mission": "Біздің миссиямыз",
+                "about-mission-desc": "Адам мен табиғат үйлесімде өмір сүретін әлем құру. Әрқайсымыздың кішкентай қадамдарымыз жаһандық өзгерістерге әкелетініне сенеміз.",
+                "prob-title": "Экологиялық мәселелер",
+                "prob-air": "Ауаның ластануы",
+                "prob-air-desc": "Зауыттар мен көліктердің шығарындылары озон қабатын бұзып, тыныс алу ауруларын тудырады.",
+                "prob-water": "Судың ластануы",
+                "prob-water-desc": "Жыл сайын мұхиттарға тонна улы қалдықтар төгіліп, теңіз фаунасын өлтіреді.",
+                "prob-forest": "Ормандарды кесу",
+                "prob-forest-desc": "Минут сайын ондаған футбол алаңына тең орман алқаптары жойылып, жануарларды үйсіз қалдырады.",
+                "prob-plastic": "Пластик",
+                "prob-plastic-desc": "Микропластик тамақ тізбегіне енеді. Мұхиттардағы пластикалық аралдар бүтін бір елдің көлеміне жетуде.",
+                "sol-title": "Біздің шешімдер",
+                "sol-recycle": "Қалдықтарды қайта өңдеу",
+                "sol-recycle-desc": "Қоқысты бөлек жинау және қайта өңделетін материалдардан жаңа заттар жасау.",
+                "sol-plastic": "Пластикті азайту",
+                "sol-plastic-desc": "Биологиялық ыдырайтын және көп рет қолданылатын баламалар үшін бір реттік қаптамадан бас тарту.",
+                "sol-energy": "Жаңартылатын энергия",
+                "sol-energy-desc": "Көміртегі ізін азайту үшін күн, жел және геотермалдық энергияға көшу.",
+                "sol-green": "Көгалдандыру",
+                "sol-green-desc": "Ауаны тазарту үшін ағаштарды жаппай отырғызу және қалалық саябақтар құру.",
+                "proj-title": "Біздің жобалар",
+                "proj-1": "Жағалауларды тазарту",
+                "proj-1-desc": "Жағажайлар мен өзен жағаларында пластик жинауға арналған волонтерлік бағдарлама.",
+                "proj-2": "Болашақ ормандары",
+                "proj-2-desc": "Кесілген орман алқаптарын қалпына келтіру бастамасы.",
+                "stat-1": "Отырғызылған ағаштар",
+                "stat-2": "Белсенді волонтерлер",
+                "stat-3": "Тазартылған су қоймалары",
+                "stat-4": "Қатысушы елдер",
+                "video-title": "Экология назарда",
+                "case-title": "Жоба әзірлеушілер",
+                "form-title": "Бізге қосылыңыз",
+                "form-name": "Сіздің атыңыз",
+                "form-email": "Сіздің Email",
+                "form-msg": "Неліктен волонтер болғыңыз келеді?",
+                "form-submit": "Өтінім жіберу",
+                "footer-desc": "Әлемді бірге тазартайық.",
+                "footer-contacts": "Байланыс",
+                "footer-social": "Әлеуметтік желілер"
+            }
+        };
+
+        
+
+        // Функция переключения языка
+        function changeLanguage(lang) {
+            // Обновляем тексты
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Обновляем плейсхолдеры в форме
+            document.querySelectorAll('[data-i18n-ph]').forEach(element => {
+                const key = element.getAttribute('data-i18n-ph');
+                if (translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+
+            // Обновляем активный класс кнопок
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase() === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function toggleMenu() {
+            document.querySelector('.nav').classList.toggle('active');
+        }   
+        // ===== MODAL FUNCTION =====
+
+function openModal(name) {
+    document.getElementById("modal-" + name).style.display = "flex";
+}
+
+function closeModal(name) {
+    document.getElementById("modal-" + name).style.display = "none";
+}
+
+window.onclick = function(e) {
+    if (e.target.classList.contains("modal")) {
+        e.target.style.display = "none";
+    }
+}
+// ECO GAME
+document.addEventListener("DOMContentLoaded", () => {
+
+let draggedCell = null;
+let score = 0;
+const scoreDisplay = document.getElementById("score");
+
+const correctCategories = {
+  "Қайта өңдеу": 0,
+  "Ағаш отырғызу": 0,
+  "Пластик жағу": 1,
+  "Қоқыс тастау": 1,
+  "Жүру": 2,
+  "Теледидар көру": 2
+};
+
+document.querySelectorAll("#eco-game td").forEach(cell => {
+
+  cell.addEventListener("dragstart", () => {
+    draggedCell = cell;
+    cell.classList.add("dragging");
+  });
+
+  cell.addEventListener("dragend", () => {
+    cell.classList.remove("dragging");
+  });
+
+  cell.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    cell.classList.add("hovered");
+  });
+
+  cell.addEventListener("dragleave", () => {
+    cell.classList.remove("hovered");
+  });
+
+  cell.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    let fromText = draggedCell.textContent;
+    let targetCol = cell.cellIndex;
+
+    if (correctCategories[fromText] !== undefined) {
+      if (correctCategories[fromText] === targetCol) {
+        score++;
+        scoreDisplay.textContent = "Ұпай: " + score;
+        cell.classList.add("correct");
+      } else {
+        cell.classList.add("wrong");
+      }
+
+      setTimeout(() => {
+        cell.classList.remove("correct", "wrong");
+      }, 800);
+    }
+
+    if (draggedCell !== cell) {
+      let temp = cell.textContent;
+      cell.textContent = draggedCell.textContent;
+      draggedCell.textContent = temp;
+    }
+
+    cell.classList.remove("hovered");
+  });
+
+});
+
+});
+
+function toggleFullScreen() {
+    const btn = document.getElementById("fullscreenBtn");
+
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+        btn.textContent = "Full Screen";
+    } else {
+        document.documentElement.requestFullscreen();
+        btn.textContent = "Exit Screen";
+    }
+}
+
+document.addEventListener("fullscreenchange", () => {
+    console.log("Режим өзгерді");
+});
+
+const video = document.querySelector("video");
+
+document.addEventListener("fullscreenchange", () => {
+    if (document.fullscreenElement) {
+        video.setAttribute("controls", true);
+    }
+});
+            </script>
+        </body>
+        </html>
